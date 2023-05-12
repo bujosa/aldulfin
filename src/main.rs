@@ -1,10 +1,4 @@
-macro_rules! message_pattern {
-    ($name:ident, $pattern:expr) => {
-        fn $name(msg: &str) -> bool {
-            regex::Regex::new($pattern).unwrap().is_match(msg)
-        }
-    };
-}
+use packages::message_pattern;
 
 message_pattern!(is_hello, r"^hello .*$");
 message_pattern!(is_goodbye, r"^goodbye .*$");
